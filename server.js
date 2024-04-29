@@ -40,7 +40,7 @@ mongoose
 
     // Start the Express server only after the database connection is established
     app.use(express.json());
-    app.use(cors);
+    app.use(cors());
     app.use("/api", routes);
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);

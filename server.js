@@ -18,7 +18,14 @@ mongoose
     // Start the Express server only after the database connection is established
     app.use(express.json());
     app.use(cors());
+
+    // Add root route handler
+    app.get("/", (req, res) => {
+      res.send("Welcome to the API!"); // You can customize this message
+    });
+
     app.use("/api", routes);
+
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });

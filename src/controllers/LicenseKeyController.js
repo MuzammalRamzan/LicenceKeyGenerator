@@ -18,7 +18,7 @@ exports.deviceLogin = async (req, res) => {
       deviceId,
       deviceInfo
     );
-    res.status(result.success ? 200 : 403).json({ success: false, result });
+    res.status(result.success ? 200 : 403).json(result);
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }

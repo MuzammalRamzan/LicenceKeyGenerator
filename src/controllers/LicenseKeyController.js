@@ -26,8 +26,8 @@ exports.deviceLogin = async (req, res) => {
 
 exports.getLicenseAndNFT = async (req, res) => {
   try {
-    const { walletAddress } = req.body;
-    console.log(walletAddress);
+    let { walletAddress } = req.body;
+    walletAddress = walletAddress.toLowerCase(); // Convert to lowercase
     const result = await LicenseKeyService.getLicenseAndNFT(walletAddress);
     if (!result) {
       return res

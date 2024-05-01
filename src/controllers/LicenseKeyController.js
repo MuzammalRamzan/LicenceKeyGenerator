@@ -43,7 +43,7 @@ exports.getLicenseAndNFT = async (req, res) => {
 
 exports.updateLicenseKey = async (req, res) => {
   try {
-    const { walletAddress } = req.body;
+    let { walletAddress } = req.body;
     walletAddress = walletAddress.toLowerCase(); // Convert to lowercase
     if (!walletAddress) {
       return res.status(400).json({ message: "Wallet address is required." });
@@ -61,7 +61,7 @@ exports.updateLicenseKey = async (req, res) => {
 
 exports.disconnectDevice = async (req, res) => {
   try {
-    const { walletAddress, deviceId } = req.body;
+    let { walletAddress, deviceId } = req.body;
     walletAddress = walletAddress.toLowerCase(); // Convert to lowercase
     if (!walletAddress || !deviceId) {
       return res
